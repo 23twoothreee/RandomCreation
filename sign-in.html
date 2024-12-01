@@ -141,8 +141,13 @@
             const errorMessage = document.getElementById("errorMessage");
             const usernameError = username.parentNode.querySelector(".invalid-feedback");
             const passwordError = password.parentNode.querySelector(".invalid-feedback");
-            usernameError.style.display = "none";
-            passwordError.style.display = "none";
+
+            if (input.id === "username" && usernameError) {
+                usernameError.style.display = "none";
+            } else if (input.id === "password" && passwordError) {
+                passwordError.style.display = "none";
+            }
+
             errorMessage.style.display = "none";
             input.classList.remove("is-invalid");
         }
